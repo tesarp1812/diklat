@@ -22,14 +22,12 @@ Route::get('/diklat', function () {
     return view('diklat');
 });
 
-Route::get('/tambah_peserta', function () {
-    return view('tambah_peserta');
-});
-
 Route::get('/penilaian', function () {
     return view('penilaian');
 });
 
-Route::controller(DiklatController::class)->group(function(){
+Route::controller(DiklatController::class)->group(function () {
     Route::get('/peserta_diklat', 'index');
+    Route::get('/tambah_peserta', 'create');
+    Route::post('/tambah_peserta', 'store');
 });
