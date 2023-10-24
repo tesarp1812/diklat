@@ -15,12 +15,12 @@
                     <label class="input-text" id="basic-addon1">Asal Kolat</label>
                     <select class="form-select" name="kolat" aria-label="Default select example">
                         <option selected>Kolat</option>
-                        <option value="1">Belanegara</option>
-                        <option value="2">Universitas Brawijaya</option>
-                        <option value="3">Universitas Negeri Malang</option>
-                        <option value="4">SMK Negeri 8</option>
-                        <option value="5">SMP Negeri 2 Wagir</option>
-                        <option value="6">SMP Negeri 15</option>
+                        <option value="Belanegara">Belanegara</option>
+                        <option value="Universitas Brawijaya">Universitas Brawijaya</option>
+                        <option value="Universitas Negeri Malang">Universitas Negeri Malang</option>
+                        <option value="SMK Negeri 8">SMK Negeri 8</option>
+                        <option value="SMP Negeri 2 Wagir">SMP Negeri 2 Wagir</option>
+                        <option value="SMP Negeri 15">SMP Negeri 15</option>
                     </select>
                 </div>
                 <input type="submit" value="Simpan Data" class="btn btn-success">

@@ -13,7 +13,9 @@ class DiklatController extends Controller
 {
     public function index()
     {
-        return view('/peserta_diklat');
+        $peserta = Peserta::all();
+        //dd($peserta);
+        return view('/peserta_diklat', compact('peserta'));
     }
 
     public function create()
@@ -24,7 +26,7 @@ class DiklatController extends Controller
     public function store(Request $request)
     {
 
-        dd($request->all());
+        //dd($request->all());
 
         //tambah data
         peserta::create([
@@ -33,5 +35,10 @@ class DiklatController extends Controller
         ]);
 
         return redirect('/peserta_diklat')->with(['success' => 'data berhasil di masukkan']);
+    }
+
+    public function nilai(Request $request)
+    {
+        return view ('/tambah_nilai');
     }
 }
