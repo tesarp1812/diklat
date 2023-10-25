@@ -30,5 +30,8 @@ Route::controller(DiklatController::class)->group(function () {
     Route::get('/peserta_diklat', 'index');
     Route::get('/tambah_peserta', 'create');
     Route::post('/tambah_peserta', 'store');
-    Route::get('/tambah_nilai/{$id}', 'nilai');
+    //nilai peserta
+    Route::get('/nilai/{id}', 'nilai');
+    Route::get('/tambah_nilai/{id}', 'tambahNilai');
+    Route::post('/tambah_nilai', 'nilaiTambah');
 });

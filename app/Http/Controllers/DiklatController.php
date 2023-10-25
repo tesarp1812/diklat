@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 // import model
 use App\Models\peserta;
+use App\Models\nilai;
 
 
 
@@ -39,6 +40,28 @@ class DiklatController extends Controller
 
     public function nilai(Request $request)
     {
-        return view ('/tambah_nilai');
+        $nilai = Nilai::with('peserta')->where('id_peserta', $request->id)->get();
+        $total = Nilai::sum('nilai');
+        //dd($total);
+        return view('/nilai', ['nilai' => $nilai, 'total' => $total, 'id_peserta' => $request->id]);
+    }
+
+    public function nilaiTambah(Request $request)
+    {
+        //dd($request->all());
+        nilai::create([
+            'id_peserta' => $request->id_peserta,
+            'nilai' => $request->nilai,
+            'author' => $request->author
+        ]);
+        return redirect('/peserta_diklat')->with(['success' => 'data berhasil di masukkan']);
+    }
+
+    public function tambahNilai(Request $request)
+    { {
+            $nilai = Nilai::with('peserta')->where('id_peserta', $request->id)->first();
+            //dd($nilai);
+            return view('/tambah_nilai', ['nilai' => $nilai, 'id_peserta' => $request->id]);
+        }
     }
 }

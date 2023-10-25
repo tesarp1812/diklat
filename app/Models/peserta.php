@@ -9,6 +9,11 @@ class peserta extends Model
 {
     use HasFactory;
 
+    public function nilai()
+    {
+        return $this->hasMany(Nilai::class);
+    }
+
     protected $fillable = [
         'nama',
         'kolat'
