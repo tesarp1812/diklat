@@ -6,13 +6,13 @@
             <h5 class="card-title">Tambah Nilai</h5>
             <form action="/tambah_nilai" method="POST">
                 @csrf
-                <input type="hidden" value="{{ $nilai->id_peserta }}" name="id_peserta">
-                <div class="input mb-3">
+                <input type="text" value="{{ $id }}" name="id_peserta">
+                {{-- <div class="input mb-3">
                     <label class="input-text" id="basic-addon1">Nama Peserta</label>
                     <input type="text" name="nama" class="form-control"
                         placeholder="{{ $nilai->peserta->nama ?? '' }}" aria-label="Nama Peserta"
                         aria-describedby="basic-addon1" disabled>
-                </div>
+                </div> --}}
 
                 <div class="input mb-3">
                     <label class="input-text" id="basic-addon1">Nilai</label>

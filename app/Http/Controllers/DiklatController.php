@@ -59,9 +59,8 @@ class DiklatController extends Controller
 
     public function tambahNilai(Request $request)
     { {
-            $nilai = Nilai::with('peserta')->where('id_peserta', $request->id)->first();
-            //dd($nilai);
-            return view('/tambah_nilai', ['nilai' => $nilai, 'id_peserta' => $request->id]);
+
+            return view('/tambah_nilai', ['id' => $request->id]);
         }
     }
 }
